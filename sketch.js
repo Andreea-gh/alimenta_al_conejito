@@ -59,7 +59,7 @@ function preload()
 
 function setup() 
 {
-  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  /*var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if(isMobile){
     canW = displayWidth; 
     canH = displayHeight; 
@@ -69,7 +69,9 @@ function setup()
     canW = windowWidth; 
     canH = windowHeight; 
     createCanvas(windowWidth, windowHeight);
-  }
+  }*/
+  
+  canvas = createCanvas(windowWidth, windowHeight);
   frameRate(80);
 
   bk_song.play();
@@ -191,7 +193,9 @@ function drop3()
   fruit_con_3.detach();
   fruit_con_3 = null;
 }
-
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 
 function collide(body,sprite)
 {
